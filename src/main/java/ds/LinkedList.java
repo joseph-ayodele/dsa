@@ -24,7 +24,7 @@ public class LinkedList<T> {
 		if (head == null) {
 			head = newNode;
 		} else {
-			Node current = head;
+			Node<T> current = head;
 			while (current.next != null) {
 				current = current.next;
 			}
