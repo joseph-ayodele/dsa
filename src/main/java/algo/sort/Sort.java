@@ -1,4 +1,4 @@
-package sort;
+package algo.sort;
 
 import java.util.List;
 
