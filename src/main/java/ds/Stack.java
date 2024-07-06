@@ -4,39 +4,39 @@ package ds;
  * Stack implementation using a linked list
  * LIFO
  */
-public class Stack {
-	private LinkedList.Node top;
+public class Stack<T> {
+	private LinkedList.Node<T> top;
 	
 	public Stack() {
 		this.top = null;
 	}
 
 	// Push an element onto the stack
-	public void push(int data) {
-		LinkedList.Node newNode = new LinkedList.Node(data);
+	public void push(T data) {
+		LinkedList.Node<T> newNode = new LinkedList.Node(data);
 		newNode.next = top;
 		top = newNode;
 	}
 
 	// Pop an element from the stack
-	public int pop() {
+	public T pop() {
 		if (isEmpty()) {
 			throw new IllegalStateException("Stack is empty");
 		}
-		int popped = top.data;
+		T popped = top.data;
 		top = top.next;
 		return popped;
 	}
 
 	// Peek the top element
-	public int peek() {
+	public T peek() {
 		if (isEmpty()) {
 			throw new IllegalStateException("Stack is empty");
 		}
 		return top.data;
 	}
 
-	public int top() {
+	public T top() {
 		return peek();
 	}
 
@@ -47,7 +47,7 @@ public class Stack {
 
 	// Print the stack
 	public void printStack() {
-		LinkedList.Node current = top;
+		LinkedList.Node<T> current = top;
 		while (current != null) {
 			System.out.print(current.data + " ");
 			current = current.next;
@@ -56,7 +56,7 @@ public class Stack {
 	}
 
 	public static void main(String[] args) {
-		Stack stack = new Stack();
+		Stack<Integer> stack = new Stack<>();
 
 		stack.push(10);
 		stack.push(20);

@@ -4,23 +4,23 @@ package ds;
  * A linked list is a data structure that consists of a sequence of elements,
  * each containing a reference (link) to the next element in the sequence.
  */
-public class LinkedList {
-	static class Node {
-		int data;
-		Node next;
+public class LinkedList<T> {
+	static class Node<T> {
+		T data;
+		Node<T> next;
 
-		public Node(int data) {
+		public Node(T data) {
 			this.data = data;
 			this.next = null;
 		}
 	}
 
 	// Starting node
-	Node head;
+	Node<T> head;
 
 	// Add a node at the end
-	public void add(int data) {
-		Node newNode = new Node(data);
+	public void add(T data) {
+		Node<T> newNode = new Node<>(data);
 		if (head == null) {
 			head = newNode;
 		} else {
@@ -33,7 +33,7 @@ public class LinkedList {
 	}
 
 	// Remove a node
-	public void remove(int data) {
+	public void remove(T data) {
 		if (head == null) return;
 
 		if (head.data == data) {
@@ -41,7 +41,7 @@ public class LinkedList {
 			return;
 		}
 
-		Node current = head;
+		Node<T> current = head;
 		while (current.next != null && current.next.data != data) {
 			current = current.next;
 		}
@@ -50,10 +50,24 @@ public class LinkedList {
 			current.next = current.next.next;
 		}
 	}
+	
+	// Get an element at index
+	public T get(int i) {
+		Node<T> current = head;
+		int curIndex = 0;
+		
+		while (current != null && i != curIndex) {
+			System.out.print(current.data + " ");
+			current = current.next;
+			curIndex++;
+		}
+		assert current != null;
+		return current.data;
+	}
 
 	// Print the list
 	public void printList() {
-		Node current = head;
+		Node<T> current = head;
 		while (current != null) {
 			System.out.print(current.data + " ");
 			current = current.next;
@@ -62,7 +76,7 @@ public class LinkedList {
 	}
 
 	public static void main(String[] args) {
-		LinkedList list = new LinkedList();
+		LinkedList<Integer> list = new LinkedList<>();
 
 		// Adding elements
 		list.add(10);
