@@ -1,4 +1,10 @@
 package algo.sort;
 
-public class InsertionSort {
+import java.util.List;
+
+public class InsertionSort implements Sort {
+	@Override
+	public void sort(List<Integer> list) {
+		
+	}
 }
