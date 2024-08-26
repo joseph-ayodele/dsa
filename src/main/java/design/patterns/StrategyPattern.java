@@ -1,9 +1,9 @@
 package design.patterns;
 
-import sort.BubbleSort;
-import sort.InsertionSort;
-import sort.QuickSort;
-import sort.Sort;
+import algorithms.sort.BubbleSort;
+import algorithms.sort.InsertionSort;
+import algorithms.sort.QuickSort;
+import algorithms.sort.Sort;
 
 /**
  * The Strategy Pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable.

@@ -1,4 +1,4 @@
-package algo.graph;
+package algorithms.graph;
 
 public class BellmanFord {
 }
